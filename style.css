@@ -1,7 +1,8 @@
 :root{
     --header-1: 64px;
-    --header-2: 48px;
-    --subtitle: 36px;
+    --header-2: 36px;
+    --subtitle: 24px;
+    --body:18px;
     --c-primary: #cfdac3;
     --c-accent: #e9e0cb;
     --c-dark: #222222;
@@ -34,8 +35,44 @@ h1{
 h2{
     font-size:var(--header-2);
     font-weight:700;
+    color:#abbd98;
+}
+h3{
+    font-size:var(--subtitle);
+    font-weight:700;
+    color:#5b684e;
 }
 
+p{
+    font-size: var(--body);
+    font-weight:500;
+    text-align: justify;
+    padding-top:10px;
+    color:#5d5e5d;
+}
+
+.btn{
+    margin:8px 0;
+    padding: 10px 20px;
+    width:fit-content;
+    border: none;
+    border-radius:4px;
+    outline: none;
+    font-family:'Montserrat',sans-serif;
+    font-size:16px;
+    font-weight:600;
+}
+
+.btn-primary{
+    background-color:var(--c-primary);
+    color:var(--c-dark);
+}
+
+.btn-outline{
+    background-color:var(--c-light);
+    color:var(--c-dark);
+    border: 2px solid var(--c-primary);
+}
 .navbar{
     width:100%;
     height:10vh;
@@ -44,6 +81,9 @@ h2{
     justify-content: space-between;
     padding: 20px 120px;
     align-items: center;
+    position: sticky;
+    top:0;
+
 }
 
 .navbar .nav-links ul{
@@ -86,8 +126,233 @@ h2{
     flex-direction: column;
 }
 .hero .hero-text p{
-    font-size: var(--body);
+    margin:8px 0;
 }
-.btn{
-    padding: 10px 20px;
+.hero h1{
+    color:#a4bb8b;
+}
+
+.hero .hero-text .btn{
+    margin-top:24px;
+}
+
+.about{
+    width:100%;
+    padding: 20px 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about p{
+    margin:8px 0;
+}
+.services
+{
+    width:100%;
+    padding: 50px 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.services .service{
+    margin-bottom: 32px;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.services .service .service-img
+{
+    width:40%;
+
+}
+.services .service .service-img img
+{
+    width:100%;
+    box-shadow:4px 4px 10px rgba(0,0,0,0.5);
+}
+.services .service .service-info
+{
+    width:50%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.services .service .service-info p{
+    margin-top: 16px;
+}
+.reverse{
+    flex-direction: row-reverse;
+}
+.pricing
+{
+    width:100%;
+    padding: 50px 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pricing .card{
+    width:30%;
+    margin:16px;
+    padding: 16px;
+    padding-top:64px;
+    padding-bottom: 32px;
+    border-radius:4px;
+    background-color:var(--c-light);
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0px 0px 8px 0px rgba(0,0,0,0.2);
+}
+.pricing .card.popular{
+    position: relative;
+    border:2px sold var(--c-primary);
+    box-shadow:0px 0px 8px 0px var(--c-primary);
+}
+.pricing .card.popular::before{
+    position:absolute;
+    top: 0;
+    content:'Most Popular';
+    width:97%;
+    background-color: var(--c-primary);
+    padding:8px;
+    text-align:center;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 4px 4px 0px 0px;
+}
+.pricing .card h3{
+    text-align:center;
+}
+.pricing .card ul{
+    margin:16px 0;
+    list-style-type: none;
+    text-align:center;
+}
+.pricing .card ul li{
+    margin:8px 0;
+}
+.contact{
+    width:100%;
+    padding: 50px 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact .contact-details{
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+}
+.contact .contact-details p{
+    margin-top:20px;
+}
+.contact .contact-details .icons{
+    display:flex;
+}
+.contact .contact-details .icons img{
+    margin:32px 0;
+    margin-right:12px;
+    width:40px;
+}
+.contact .contact-form{
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+}
+.contact .contact-form h3{
+    text-align: center;
+    margin-bottom: 32px;
+}
+.contact .contact-form form{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    padding:0 32px;
+}
+.contact .contact-form form input, .contact .contact-form form textarea{
+    margin:8px 0;
+    padding:8px;
+    border:1px solid var(--c-grey);
+    border-radius:4px;
+    font-size: 16px;
+    font-weight:500;
+    outline:none;
+    width:80%;
+}
+.contact .contact-form form input::placeholder, .contact .contact-form form textarea::placeholder{
+    font-family:'Montserrat',sans-serif;
+}
+.contact .contact-form form .btn {
+    width:80%;
+}
+/*Tablet responsive*/
+@media screen and(max-width:768px)
+{
+    :root{
+        --header-1: 48px;
+        --header-2: 32px;
+        --subtitle: 28px;
+        --body:18px;
+    }
+}
+@media screen and (max-width:640px)
+{
+    :root{
+        --header-1: 48px;
+        --header-2: 32px;
+        --subtitle: 28px;
+        --body:18px;
+    }
+    .navbar{
+        display:none;
+    }
+    h1,h2,h3,p{
+        text-align:center;
+    }
+    .hero
+    {
+        flex-direction: column-reverse;
+        padding:20px;
+    }
+    .hero .hero-text, .hero .hero-image{
+        width: 100%;
+        margin: 16px 0;
+        text-align: center;
+    }
+    .hero-text .btn{
+        margin:0 auto;
+    }
+    .about, .services, .pricing, .contact
+    {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .services .service, .services .service.reverse,.pricing,.contact{
+        flex-direction: column;
+    }
+    .services .service .service-img, .services .service .service-info{
+        width: 100%;
+        margin: 8px 0;
+    }
+    .pricing .card{
+        width:100%;
+    }
+    .contact .contact-details,.contact .contact-form{
+        margin-bottom:16px;
+        width:100%;
+    }
+    .contact .contact-form form input,.contact .contact-form form textarea{
+        width:100%;
+    }
+    .contact-details .icons{
+        margin:0 auto;
+    }
 }
